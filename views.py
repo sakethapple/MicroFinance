@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import State,City,Customer
+from .models import State,City,Customer,Agent
 # Create your views here.
 
 def openHomePage(request):
@@ -97,6 +97,6 @@ def registeragent(request):
 
     print(a_name, a_contact, a_email, a_password, a_empid)
 
-    ar=Customer(Emp_id=a_empid,Name=a_name,Email_id=a_email,contact_number=a_contact,password=a_password)
+    ar=Agent(emp_id=a_name,Email_id=a_email,contact_number=a_contact,password=a_password)
     ar.save()
-    return render(request,"index.html",{"type":"h.agent","message":"Registred"})
+    return render(request,"index.html",{"type":'h.agent',"message":"Registred"})

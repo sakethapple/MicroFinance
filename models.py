@@ -29,7 +29,7 @@ class Investor(models.Model):
 
 
 class Agent(models.Model):
-    Emp_id = models.IntegerField()
+    emp_id = models.IntegerField()
     Name = models.CharField(max_length=20)
     contact_number = models.IntegerField()
     Email_id = models.EmailField(primary_key=True)
